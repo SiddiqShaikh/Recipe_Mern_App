@@ -13,6 +13,6 @@ app.use('/auth', userRouter);
 app.use('/recipes', recipesRouter);
 
 mongoose.connect(
-	'mongodb+srv://siddiq:MERNpassword123@recipes.v59oism.mongodb.net/recipes?retryWrites=true&w=majority'
+	`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@recipes.v59oism.mongodb.net/recipes?retryWrites=true&w=majority`
 );
 app.listen(3001, () => console.log('Server Started!'));
